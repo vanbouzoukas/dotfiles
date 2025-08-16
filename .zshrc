@@ -37,6 +37,9 @@ brewout() {
 
 # ───── QoL (Quality of Life) ─────
 
+# Clear terminal
+alias cl="clear"
+
 # Reload shell config
 alias reload="source ~/.zshrc"
 
