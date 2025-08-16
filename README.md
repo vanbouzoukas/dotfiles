@@ -12,7 +12,7 @@ My personal collection of dotfiles.
 1. Clone the repo into your home directory:
 
    ```sh
-   git clone git@github.com:your-username/dotfiles.git ~/.dotfiles
+   git clone git@github.com:vanbouzoukas/dotfiles.git ~/.dotfiles
    ```
 
 2. Point to the relevant dotfiles in your local config.
