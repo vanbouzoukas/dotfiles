@@ -13,8 +13,10 @@ alias npx="pnpm dlx"
 
 # Short pnpm commands
 alias pn="pnpm"
+alias pni="pnpm install"
 alias pnd="pnpm dev"
 alias pnu="pnpm update --latest --interactive"
+alias pnc="pnpm clean"
 
 
 # ───── Homebrew ─────
