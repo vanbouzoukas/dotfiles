@@ -20,19 +20,16 @@ alias pnu="pnpm update --latest --interactive"
 # ───── Homebrew ─────
 
 # Upgrade all and clean
-alias brewuc="brew upgrade --greedy && brew cleanup --prune=all"
+alias bru="brew upgrade --greedy && brew cleanup --prune=all"
 
-# Upgrade only outdated packages
-alias brewu="brew upgrade"
+# Upgrade only
+alias bu="brew upgrade"
 
-# Clean up old files
-alias brewc="brew cleanup --prune=all"
+# Clean only
+alias bc="brew cleanup --prune=all"
 
 # Show outdated packages
-brewout() {
-  echo "Outdated packages:"
-  brew outdated
-}
+alias bo="brew outdated"
 
 
 # ───── QoL (Quality of Life) ─────
