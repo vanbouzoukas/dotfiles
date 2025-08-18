@@ -14,9 +14,34 @@ alias npx="pnpm dlx"
 # Short pnpm commands
 alias pn="pnpm"
 alias pni="pnpm install"
-alias pnd="pnpm dev"
 alias pnu="pnpm update --latest --interactive"
-alias pnc="pnpm clean"
+
+# Run pnpm dev if defined, else show warning
+pnd() {
+  if grep -q '"dev":' package.json 2>/dev/null; then
+    pnpm dev
+  else
+    echo "⚠️  'dev' script not found in package.json"
+  fi
+}
+
+# Run pnpm start if defined, else show warning
+pns() {
+  if grep -q '"start":' package.json 2>/dev/null; then
+    pnpm start
+  else
+    echo "⚠️  'start' script not found in package.json"
+  fi
+}
+
+# Run pnpm clean if defined, else show warning
+pnc() {
+  if grep -q '"clean":' package.json 2>/dev/null; then
+    pnpm clean
+  else
+    echo "⚠️  'clean' script not found in package.json"
+  fi
+}
 
 
 # ───── Homebrew ─────
