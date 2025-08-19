@@ -14,7 +14,6 @@ alias npx="pnpm dlx"
 # Short pnpm commands
 alias pn="pnpm"
 alias pni="pnpm install"
-alias pnu="pnpm update --latest --interactive"
 
 # Run pnpm dev if defined, else show warning
 pnd() {
@@ -40,6 +39,15 @@ pnc() {
     pnpm clean
   else
     echo "⚠️  'clean' script not found in package.json"
+  fi
+}
+
+# Run custom update:latest script if defined, else fallback to pnpm update --latest
+pnu() {
+  if grep -q '"update:latest":' package.json 2>/dev/null; then
+    pnpm update:latest
+  else
+    pnpm update --latest --interactive
   fi
 }
 
