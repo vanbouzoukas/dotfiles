@@ -1,12 +1,12 @@
-# ───── Homebrew taps ─────
+# Homebrew taps
 tap "oven-sh/bun"
 
-# ───── CLI tools ─────
+# CLI tools
 brew "node"
 brew "pnpm"
 brew "oven-sh/bun/bun"
 
-# ───── Apps (Casks) ─────
+# Apps (Casks)
 cask "appcleaner"
 cask "brave-browser"
 cask "chatgpt"
@@ -20,10 +20,11 @@ cask "notion"
 cask "openra"
 cask "plex"
 cask "protonvpn"
+cask "rive"
 cask "visual-studio-code"
 cask "zoom"
 
-# ───── VS code extensions ─────
+# VS code extensions
 vscode "aaron-bond.better-comments"
 vscode "bradlc.vscode-tailwindcss"
 vscode "davidanson.vscode-markdownlint"
