@@ -1,3 +1,26 @@
+# ─── Bun ───────────────────────────────────────────────────────────────────────
+
+# Set Bun home and add to PATH if not already present (official Bun docs) [web:7][page:0]
+export BUN_INSTALL="$HOME/.bun"
+case ":$PATH:" in
+  *":$BUN_INSTALL/bin:"*) ;;
+  *) export PATH="$BUN_INSTALL/bin:$PATH" ;;
+esac
+
+# Source Bun completions if available (prevents duplicates on upgrade) [web:11][web:29]
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
+
+# Use bun instead of npm/npx (community migration pattern) [web:37][web:41]
+alias npm=bun
+alias npx="bunx"
+
+# Short bun commands
+alias b="bun"
+alias bi="bun install"
+alias ba="bun add"
+alias bad="bun add -d"
+
+
 # ───── pnpm ─────
 
 # Set pnpm home and add to PATH if not already present
@@ -14,43 +37,6 @@ alias npx="pnpm dlx"
 # Short pnpm commands
 alias pn="pnpm"
 alias pni="pnpm install"
-
-# Run pnpm dev if defined, else show warning
-pnd() {
-  if grep -q '"dev":' package.json 2>/dev/null; then
-    pnpm dev
-  else
-    echo "⚠️  'dev' script not found in package.json"
-  fi
-}
-
-# Run pnpm start if defined, else show warning
-pns() {
-  if grep -q '"start":' package.json 2>/dev/null; then
-    pnpm start
-  else
-    echo "⚠️  'start' script not found in package.json"
-  fi
-}
-
-# Run pnpm clean if defined, else show warning
-pnc() {
-  if grep -q '"clean":' package.json 2>/dev/null; then
-    pnpm clean
-  else
-    echo "⚠️  'clean' script not found in package.json"
-  fi
-}
-
-# Run custom update:latest script if defined, else fallback to pnpm update --latest
-pnu() {
-  if grep -q '"update:latest":' package.json 2>/dev/null; then
-    pnpm update:latest
-  else
-    pnpm update --latest --interactive
-  fi
-}
-
 
 # ───── Homebrew ─────
 
