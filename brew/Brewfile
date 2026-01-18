@@ -1,6 +1,7 @@
 # CLI tools
 brew "bun"
 brew "node"
+brew "pnpm"
 brew "starship" # Shell prompt
 brew "stow" # Symlink manager
 
