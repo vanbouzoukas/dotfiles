@@ -10,7 +10,8 @@ cask "brainfm"
 cask "github"
 
 # Personal apps (skipped in work mode)
-unless ENV["DOTFILES_WORK_MODE"]
+# Checks for marker file used by install.sh to detect work mode
+unless File.exist?(File.expand_path("~/.dotfiles/work_mode"))
   cask "brave-browser"
   cask "chatgpt"
   cask "cursor"

@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-DOTFILES_DIR="${HOME}/Developer/dotfiles"
-BACKUP_DIR="${HOME}/.dotfiles_backups/$(date +%Y%m%d_%H%M%S)"
+REPO_DIR="${HOME}/Developer/dotfiles"
+STATE_DIR="${HOME}/.dotfiles"
+BACKUP_DIR="${STATE_DIR}/backups/$(date +%Y%m%d_%H%M%S)"
+WORK_MODE_MARKER="${STATE_DIR}/work_mode"
 
 echo "🔧 Installing dotfiles..."
 
@@ -27,16 +29,18 @@ fi
 
 # 3. Install packages from Brewfile
 echo "📦 Installing packages from Brewfile..."
-cd "$DOTFILES_DIR/brew"
+cd "$REPO_DIR/brew"
 
-# Check for --work flag (sets environment variable for Brewfile)
+# Check for --work flag (creates a temporary marker file for Brewfile)
 if [[ "${1:-}" == "--work" ]]; then
-    export DOTFILES_WORK_MODE=1
-    echo "💼 Work mode: Skipping personal packages."
+    mkdir -p "${STATE_DIR}"
+    touch "${WORK_MODE_MARKER}"
+    # Ensure the marker is deleted when the script exits
+    trap "rm -f ${WORK_MODE_MARKER}" EXIT
+    echo "💼 Work mode active: Skipping personal packages."
 fi
 
-# Pass the variable explicitly to ensure it reaches the subprocess
-DOTFILES_WORK_MODE="${DOTFILES_WORK_MODE:-}" brew bundle --file=Brewfile || echo "⚠️  Some brew packages might have failed to install."
+brew bundle --file=Brewfile || echo "⚠️  Some brew packages might have failed to install."
 
 # 4. Backup existing dotfiles before stowing
 echo "💾 Backing up existing configurations..."
@@ -50,6 +54,6 @@ done
 
 # 5. Stow dotfiles
 echo "🔗 Linking dotfiles..."
-stow -v --restow --target="$HOME" --dir="$DOTFILES_DIR" zsh git starship
+stow -v --restow --target="$HOME" --dir="$REPO_DIR" zsh git starship
 
 echo "✅ Done! Restart your terminal."
