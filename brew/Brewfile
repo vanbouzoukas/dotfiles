@@ -5,16 +5,16 @@ brew "starship" # Shell prompt
 brew "stow" # Symlink manager
 
 # Common apps (installed on both personal & work)
+cask "appcleaner"
 cask "brainfm"
+cask "github"
 
 # Personal apps (skipped in work mode)
 unless ENV["DOTFILES_WORK_MODE"]
-  cask "appcleaner"
   cask "brave-browser"
   cask "chatgpt"
   cask "cursor"
   cask "figma"
-  cask "github"
   cask "google-chrome"
   cask "linear-linear"
   cask "notion"

@@ -29,13 +29,14 @@ fi
 echo "📦 Installing packages from Brewfile..."
 cd "$DOTFILES_DIR/brew"
 
-# Check for --work flag
+# Check for --work flag (sets environment variable for Brewfile)
 if [[ "${1:-}" == "--work" ]]; then
     export DOTFILES_WORK_MODE=1
     echo "💼 Work mode: Skipping personal packages."
 fi
 
-brew bundle --file=Brewfile || echo "⚠️  Some brew packages might have failed to install."
+# Pass the variable explicitly to ensure it reaches the subprocess
+DOTFILES_WORK_MODE="${DOTFILES_WORK_MODE:-}" brew bundle --file=Brewfile || echo "⚠️  Some brew packages might have failed to install."
 
 # 4. Backup existing dotfiles before stowing
 echo "💾 Backing up existing configurations..."
