@@ -1,3 +1,6 @@
+# Taps
+tap "oven-sh/bun"
+
 # CLI tools
 brew "oven-sh/bun/bun"
 brew "node"
