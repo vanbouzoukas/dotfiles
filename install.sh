@@ -27,7 +27,14 @@ fi
 
 # 3. Install packages from Brewfile
 echo "📦 Installing packages from Brewfile..."
-cd "$DOTFILES_DIR"
+cd "$DOTFILES_DIR/brew"
+
+# Check for --work flag
+if [[ "${1:-}" == "--work" ]]; then
+    export DOTFILES_WORK_MODE=1
+    echo "💼 Work mode: Skipping personal packages."
+fi
+
 brew bundle --file=Brewfile || echo "⚠️  Some brew packages might have failed to install."
 
 # 4. Backup existing dotfiles before stowing

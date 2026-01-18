@@ -20,6 +20,8 @@ My personal macOS development setup. Managed with [GNU Stow](https://www.gnu.org
 
    *Installs Homebrew, packages, and symlinks configs.*
 
+   > **Note:** For work machines, run `./install.sh --work` to skip personal apps (games, media servers, etc).
+
 3. **Configure Git identity:**
 
    Create `~/.gitconfig.local` to set your name and email (this file is ignored by git):
@@ -34,8 +36,8 @@ My personal macOS development setup. Managed with [GNU Stow](https://www.gnu.org
 
 - **Shell:** Zsh + Starship prompt.
 - **Tools:** Homebrew, Bun, Stow.
+- **Apps:** Managed via Brewfile.
 - **Git:** Best-practice config & aliases.
-- **Apps:** VS Code, Chrome, etc. (via Casks).
 
 ## Maintenance
 
