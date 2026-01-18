@@ -1,8 +1,5 @@
-# Taps
-tap "oven-sh/bun"
-
 # CLI tools
-brew "bun"
+brew "oven-sh/bun/bun"
 brew "node"
 brew "pnpm"
 brew "starship" # Shell prompt
