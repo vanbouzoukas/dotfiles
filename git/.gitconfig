@@ -9,6 +9,8 @@
     path = ~/.gitconfig.local
 [init]
     defaultBranch = main
+[credential]
+    helper = osxkeychain
 
 # Remote
 [push]
