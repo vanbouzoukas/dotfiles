@@ -1,0 +1,97 @@
+# Core
+[user]
+    # Name/Email in ~/.gitconfig.local
+    # signingkey = ...
+[core]
+    autocrlf = input
+    excludesfile = ~/.gitignore_global
+[include]
+    path = ~/.gitconfig.local
+[init]
+    defaultBranch = main
+
+# Remote
+[push]
+    default = current
+    autoSetupRemote = true
+    followTags = true
+[fetch]
+    prune = true
+    prunetags = true
+[pull]
+    rebase = true
+[transfer]
+    fsckobjects = true
+
+# Local
+[commit]
+    # gpgsign = true
+    verbose = true
+[status]
+    showUntrackedFiles = all
+[branch]
+    autosetuprebase = always
+    sort = -committerdate
+[rebase]
+    autosquash = true
+    autostash = true
+[merge]
+    conflictstyle = zdiff3
+[diff]
+    algorithm = histogram
+    colorMoved = default
+
+# Tools
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+
+# Aliases
+[alias]
+    # Status & commit
+    s = status -s
+    c = commit -m
+    ca = commit -a -m
+    aa = "!git add -u && git add . && git status -s"
+    amend = commit --amend
+    amenda = commit -a --amend
+    wip = !git add -A && git commit -m "WIP"
+    unwip = reset HEAD~1
+    undo = reset --soft HEAD~1
+
+    # Branch & checkout
+    b = branch
+    co = checkout
+    cob = checkout -b
+    recent = branch --sort=-committerdate --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'
+
+    # Fetch & push
+    f = fetch
+    fo = fetch origin
+    p = push
+    po = push origin
+    poh = push origin HEAD
+    sync = !git fetch --all --prune && git rebase origin/main
+
+    # Merge & rebase
+    m = merge
+    mom = merge origin/main
+    rb = rebase
+    rbc = rebase --continue
+    r = reset
+    rh = reset --hard
+    rs = reset --soft
+
+    # Diff & log
+    d = diff
+    dt = difftool
+    l = log
+    ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+    ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+    contributors = shortlog --summary --numbered
+
+    # Utilities
+    grep = grep -Ii
+    gpath = "!git ls-files | grep -i"

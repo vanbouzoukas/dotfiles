@@ -1,7 +1,8 @@
 # CLI tools
 brew "bun"
 brew "node"
-brew "pnpm"
+brew "starship" # Shell prompt
+brew "stow" # Symlink manager
 
 # Apps (Casks)
 cask "appcleaner"
@@ -20,15 +21,16 @@ cask "protonvpn"
 cask "rive"
 cask "visual-studio-code"
 
-# VS code extensions
+# VS Code extensions
 vscode "aaron-bond.better-comments"
 vscode "bradlc.vscode-tailwindcss"
-vscode "dbaeumer.vscode-eslint"
 vscode "editorconfig.editorconfig"
+vscode "github.copilot-chat"
 vscode "github.vscode-github-actions"
 vscode "github.vscode-pull-request-github"
 vscode "gruntfuggly.todo-tree"
 vscode "ms-vscode.vscode-speech"
+vscode "oven.bun-vscode"  
 vscode "oxc.oxc-vscode"
 vscode "tyriar.sort-lines"
 vscode "unifiedjs.vscode-mdx"

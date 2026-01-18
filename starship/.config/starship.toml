@@ -1,0 +1,37 @@
+# ~/.config/starship.toml
+# "Unicode/Emoji" preset
+# Replaces specific Nerd Font icons with standard Emojis/Unicode characters.
+# Best practice if you want graphics without installing patched fonts.
+
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# Common overrides (critical for Non-Nerd-Fonts)
+
+[directory]
+read_only = " 🔒"
+
+[package]
+symbol = "📦 "
+
+[git_branch]
+symbol = "🌱 "
+
+[git_status]
+deleted = "🗑 "
+
+# Languages & tools
+
+[nodejs]
+symbol = "[⬢](bold green) "
+
+[bun]
+symbol = "🍔 " # or use "Bun " text
+
+[deno]
+symbol = "🦕 "
+
+[docker_context]
+symbol = "🐳 "
+
+[python]
+symbol = "🐍 "

@@ -1,69 +1,61 @@
 # dotfiles
 
-My personal collection of dotfiles for macOS development setup.
+My personal macOS development setup. Managed with [GNU Stow](https://www.gnu.org/software/stow/).
 
-## Requirements
+## Getting started
 
-- **macOS** – This setup is designed specifically for macOS
-- [zsh](http://www.zsh.org/) – Unix shell (included with macOS)
-- [git](https://git-scm.com/) – version control
-- [Homebrew](https://brew.sh/) – package manager for macOS
-
-## Installation
-
-1. Clone the repo into your home directory:
+1. **Clone the repo:**
 
    ```sh
-   git clone git@github.com:vanbouzoukas/dotfiles.git ~/Developer/dotfiles
-   ```
-
-2. Install Homebrew if you haven't already:
-
-   ```sh
-   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-   ```
-
-3. Install all packages and applications from the Brewfile:
-
-   ```sh
+   git clone https://github.com/vanbouzoukas/dotfiles.git ~/Developer/dotfiles
    cd ~/Developer/dotfiles
-   brew bundle
    ```
 
-4. Point to the relevant dotfiles in your local config.
-
-   ### `.zshrc`
-
-   Source your custom shell configuration:
+2. **Run the installer:**
 
    ```sh
-   source ~/Developer/dotfiles/.zshrc
+   chmod +x install.sh
+   ./install.sh
    ```
 
-   ### `.gitconfig`
+   *Installs Homebrew, packages, and symlinks configs.*
 
-   Include your Git config and set your user identity:
+3. **Configure Git identity:**
 
-   ```ini
-   [include]
-       path = ~/Developer/dotfiles/.gitconfig
+   Create `~/.gitconfig.local` to set your name and email (this file is ignored by git):
 
-   [user]
-       name = Your Name
-       email = your@email.com
+   ```sh
+   echo "[user]
+       name = YOUR NAME
+       email = YOUR EMAIL" > ~/.gitconfig.local
    ```
+
+## What's included
+
+- **Shell:** Zsh + Starship prompt.
+- **Tools:** Homebrew, Bun, Stow.
+- **Git:** Best-practice config & aliases.
+- **Apps:** VS Code, Chrome, etc. (via Casks).
 
 ## Maintenance
 
-To keep your setup up to date:
-
 ```sh
 # Update Homebrew packages
-brewuc  # alias for: brew upgrade --greedy && brew cleanup --prune=all
+bru     # alias for: brew upgrade --greedy && brew cleanup --prune=all
 
-# Update pnpm packages
-pnu     # alias for: pnpm update:latest
+# Update pnpm/bun packages
+bi      # bun install
+pni     # pnpm install
 
 # Reload shell configuration
 reload  # alias for: source ~/.zshrc
 ```
+
+## Structure
+
+- `zsh/` → Shell configuration
+- `git/` → Git configuration
+- `starship/` → Prompt configuration
+- `install.sh` → Bootstrap script
+- `Brewfile` → Packages & Apps
+
