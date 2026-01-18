@@ -1,0 +1,26 @@
+# CLI tools
+brew "bun"
+brew "node"
+brew "starship" # Shell prompt
+brew "stow" # Symlink manager
+
+# Common apps (installed on both personal & work)
+cask "brainfm"
+
+# Personal apps (skipped in work mode)
+unless ENV["DOTFILES_WORK_MODE"]
+  cask "appcleaner"
+  cask "brave-browser"
+  cask "chatgpt"
+  cask "cursor"
+  cask "figma"
+  cask "github"
+  cask "google-chrome"
+  cask "linear-linear"
+  cask "notion"
+  cask "openra"
+  cask "plex"
+  cask "protonvpn"
+  cask "rive"
+  cask "visual-studio-code"
+end
