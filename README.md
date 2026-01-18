@@ -32,32 +32,33 @@ My personal macOS development setup. Managed with [GNU Stow](https://www.gnu.org
        email = YOUR EMAIL" > ~/.gitconfig.local
    ```
 
-## What's included
-
-- **Shell:** Zsh + Starship prompt.
-- **Tools:** Homebrew, Bun, Stow.
-- **Apps:** Managed via Brewfile.
-- **Git:** Best-practice config & aliases.
-
-## Maintenance
-
-```sh
-# Update Homebrew packages
-bru     # alias for: brew upgrade --greedy && brew cleanup --prune=all
-
-# Update pnpm/bun packages
-bi      # bun install
-pni     # pnpm install
-
-# Reload shell configuration
-reload  # alias for: source ~/.zshrc
-```
-
 ## Structure
 
-- `zsh/` → Shell configuration
-- `git/` → Git configuration
-- `starship/` → Prompt configuration
-- `install.sh` → Bootstrap script
-- `Brewfile` → Packages & Apps
+* **`brew/`** — Homebrew apps and packages (Brewfile).
+* **`git/`** — Git configuration and global ignore rules.
+* **`macos/`** — Scripts for system preferences.
+* **`starship/`** — Shell prompt options.
+* **`zsh/`** — Shell configuration and aliases.
+
+## macOS settings
+
+The installer automatically applies sensible defaults (fast key repeat, tap-to-click, cleaner Dock, etc). You can also run these scripts manually:
+
+```sh
+# Apply settings
+chmod +x macos/set-defaults.sh
+./macos/set-defaults.sh
+
+# Reset to factory defaults
+chmod +x macos/reset-defaults.sh
+./macos/reset-defaults.sh
+```
+
+## Useful aliases
+
+```sh
+# Maintenance
+bru     # brew upgrade --greedy && brew cleanup --prune=all
+reload  # source ~/.zshrc
+```
 

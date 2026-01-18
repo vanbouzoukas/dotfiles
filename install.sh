@@ -56,4 +56,15 @@ done
 echo "🔗 Linking dotfiles..."
 stow -v --restow --target="$HOME" --dir="$REPO_DIR" zsh git starship
 
+# 6. Set macOS defaults
+if [[ "$(uname)" == "Darwin" ]]; then
+    echo "🍎 Setting macOS defaults..."
+    if [ -f "$REPO_DIR/macos/set-defaults.sh" ]; then
+        # Make sure it's executable
+        chmod +x "$REPO_DIR/macos/set-defaults.sh"
+        # Run it
+        "$REPO_DIR/macos/set-defaults.sh"
+    fi
+fi
+
 echo "✅ Done! Restart your terminal."
