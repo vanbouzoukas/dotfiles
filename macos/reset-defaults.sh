@@ -22,7 +22,6 @@ defaults delete com.apple.AppleMultitouchTrackpad TrackpadThreeFingerDrag
 
 # Finder
 defaults delete com.apple.finder QuitMenuItem
-defaults delete NSGlobalDomain AppleShowAllExtensions
 defaults delete com.apple.finder ShowStatusBar
 defaults delete com.apple.finder ShowPathbar
 defaults delete com.apple.finder _FXSortFoldersFirst
