@@ -13,6 +13,7 @@ alias bad="bun add -d"
 alias br="bun run"
 alias bt="bun test"
 alias bx="bunx"
+alias bu="bun update --latest"
 
 # pnpm
 export PNPM_HOME="${HOME}/Library/pnpm"
@@ -25,6 +26,7 @@ alias pna="pnpm add"
 alias pnad="pnpm add -D"
 alias pnr="pnpm run"
 alias pnx="pnpm dlx"
+alias pnu="pnpm update -r -i -L"
 
 # Brew
 if [[ -f "/opt/homebrew/bin/brew" ]]; then
@@ -37,7 +39,6 @@ export HOMEBREW_NO_ANALYTICS=1
 
 # Brew aliases
 alias bru="brew upgrade --greedy && brew cleanup --prune=all"
-alias bu="brew upgrade"
 alias bc="brew cleanup --prune=all"
 alias bo="brew outdated"
 alias bl="brew list"
