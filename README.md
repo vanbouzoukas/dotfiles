@@ -21,10 +21,6 @@ cp ~/Developer/dotfiles/git/gitconfig.local.template ~/.gitconfig.local
 # Edit with your name and email
 ```
 
-Set Terminal theme:
-
-1. Double-click `terminal/vscode-dark-plus.terminal`
-2. Terminal → Settings → Profiles → select "VS Code Dark+" → click "Default"
 
 Then restart your terminal.
 
@@ -35,7 +31,6 @@ brew/       Brewfile
 git/        .gitconfig, .gitignore_global, gitconfig.local.template
 macos/      System preferences scripts
 starship/   Shell prompt
-terminal/   Terminal.app theme
 zsh/        .zshrc
 ```
 
