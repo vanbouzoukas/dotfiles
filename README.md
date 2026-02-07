@@ -17,7 +17,7 @@ For work machines (skips personal apps): `make install-work`
 Create your Git identity:
 
 ```sh
-cp ~/Developer/dotfiles/git/gitconfig.local.template ~/.gitconfig.local
+cp ~/Developer/dotfiles/git/.gitconfig.local.template ~/.gitconfig.local
 # Edit with your name and email
 ```
 
