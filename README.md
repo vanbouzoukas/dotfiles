@@ -23,8 +23,8 @@ cp ~/Developer/dotfiles/git/gitconfig.local.template ~/.gitconfig.local
 
 Set Terminal theme:
 
-1. Double-click `terminal/github-dark-default.terminal`
-2. Terminal → Settings → Profiles → select "GitHub Dark Default" → click "Default"
+1. Double-click `terminal/vscode-dark-plus.terminal`
+2. Terminal → Settings → Profiles → select "VS Code Dark+" → click "Default"
 
 Then restart your terminal.
 
