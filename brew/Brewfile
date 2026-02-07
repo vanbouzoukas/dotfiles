@@ -1,27 +1,30 @@
-# Taps
+# === Taps ===
+
 tap "oven-sh/bun"
 
-# CLI tools
+# === CLI tools ===
+
 brew "oven-sh/bun/bun"
 brew "node"
 brew "pnpm"
-brew "starship" # Shell prompt
-brew "stow" # Symlink manager
+brew "starship"
+brew "stow"
 
-# Common apps (installed on both personal & work)
+# === Common apps ===
+
 cask "appcleaner"
 cask "brainfm"
 cask "github"
 
-# Personal apps (skipped in work mode)
-# Checks for marker file used by install.sh to detect work mode
+# === Personal apps (skipped in work mode) ===
+
 unless File.exist?(File.expand_path("~/.dotfiles/work_mode"))
   cask "brave-browser"
   cask "chatgpt"
+  cask "claude"
   cask "cursor"
   cask "figma"
   cask "google-chrome"
-  cask "linear-linear"
   cask "notion"
   cask "openra"
   cask "plex"
