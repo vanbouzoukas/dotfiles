@@ -1,7 +1,7 @@
-# Core
+# === Core ===
+
 [user]
     # Name/Email in ~/.gitconfig.local
-    # signingkey = ...
 [core]
     autocrlf = input
     excludesfile = ~/.gitignore_global
@@ -12,7 +12,8 @@
 [credential]
     helper = osxkeychain
 
-# Remote
+# === Remote ===
+
 [push]
     default = current
     autoSetupRemote = true
@@ -25,14 +26,13 @@
 [transfer]
     fsckobjects = true
 
-# Local
+# === Local ===
+
 [commit]
-    # gpgsign = true
     verbose = true
 [status]
     showUntrackedFiles = all
 [branch]
-    autosetuprebase = always
     sort = -committerdate
 [rebase]
     autosquash = true
@@ -42,15 +42,19 @@
 [diff]
     algorithm = histogram
     colorMoved = default
+[rerere]
+    enabled = true
 
-# Tools
+# === Tools ===
+
 [filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
 
-# Aliases
+# === Aliases ===
+
 [alias]
     # Status & commit
     s = status -s
@@ -62,6 +66,10 @@
     wip = !git add -A && git commit -m "WIP"
     unwip = reset HEAD~1
     undo = reset --soft HEAD~1
+
+    # Stash
+    save = stash push -m
+    pop = stash pop
 
     # Branch & checkout
     b = branch
@@ -89,11 +97,12 @@
     # Diff & log
     d = diff
     dt = difftool
-    l = log
+    changes = diff --stat
     ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
     ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
     contributors = shortlog --summary --numbered
 
     # Utilities
-    grep = grep -Ii
+    gi = grep -Ii
     gpath = "!git ls-files | grep -i"
+    
