@@ -28,7 +28,7 @@ alias bnad="bun add -d"
 alias bnr="bun run"
 alias bnt="bun test"
 alias bnx="bunx"
-alias bnu="bun update --latest"
+alias bnu="bun update --recursive --interactive --latest"
 
 # === pnpm aliases ===
 
@@ -38,7 +38,7 @@ alias pna="pnpm add"
 alias pnad="pnpm add -D"
 alias pnr="pnpm run"
 alias pnx="pnpm dlx"
-alias pnu="pnpm update -r -i -L"
+alias pnu="pnpm update --recursive --interactive --latest"
 
 # === Brew aliases ===
 
