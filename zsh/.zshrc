@@ -14,10 +14,14 @@ if [[ -f "/opt/homebrew/bin/brew" ]]; then
 elif [[ -f "/usr/local/bin/brew" ]]; then
     eval "$(/usr/local/bin/brew shellenv)"
 fi
-export HOMEBREW_NO_ANALYTICS=1
 
 # Dedupe PATH entries
 typeset -U path PATH
+
+# === Environment Variables ===
+
+export HOMEBREW_NO_ANALYTICS=1
+export NEXT_TELEMETRY_DISABLED=1
 
 # === Bun aliases ===
 
@@ -50,7 +54,7 @@ alias bri="brew info"
 # === General aliases ===
 
 alias c="clear"
-alias reload="source ~/.zshrc"
+alias reload="exec zsh"
 alias dev="cd ~/Developer"
 alias o="open ."
 alias ..="cd .."
