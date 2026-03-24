@@ -1,22 +1,14 @@
-# === Taps ===
-
 tap "oven-sh/bun"
 
-# === CLI tools ===
-
-brew "oven-sh/bun/bun"
 brew "node"
+brew "oven-sh/bun/bun"
 brew "pnpm"
 brew "starship"
 brew "stow"
-
-# === Common apps ===
-
 cask "appcleaner"
 cask "brainfm"
+cask "claude-code"
 cask "github"
-
-# === Personal apps (skipped in work mode) ===
 
 unless File.exist?(File.expand_path("~/.dotfiles/work_mode"))
   cask "brave-browser"
