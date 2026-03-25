@@ -65,3 +65,6 @@ alias la="ls -A"
 # === Prompt ===
 
 eval "$(starship init zsh)"
+
+# Load machine-local overrides (not tracked in git).
+[[ -f "$HOME/.zshrc.local" ]] && source "$HOME/.zshrc.local"
