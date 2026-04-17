@@ -14,13 +14,11 @@ unless File.exist?(File.expand_path("~/.dotfiles/work_mode"))
   cask "brave-browser"
   cask "chatgpt"
   cask "claude"
-  cask "cursor"
   cask "figma"
   cask "google-chrome"
   cask "notion"
   cask "openra"
   cask "plex"
   cask "protonvpn"
-  cask "rive"
   cask "visual-studio-code"
 end
