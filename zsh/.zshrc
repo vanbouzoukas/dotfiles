@@ -27,21 +27,22 @@ export NEXT_TELEMETRY_DISABLED=1
 
 alias bn="bun"
 alias bni="bun install"
+alias bnc="rm -rf node_modules"
+alias bnci="bun ci"
 alias bna="bun add"
 alias bnad="bun add -d"
 alias bnr="bun run"
-alias bnt="bun test"
 alias bnx="bunx"
 alias bnu="bun update --recursive --interactive --latest"
 
 # === pnpm aliases ===
 
-alias pn="pnpm"
 alias pni="pnpm install"
+alias pnc="pnpm clean"
+alias pnci="pnpm ci"
 alias pna="pnpm add"
 alias pnad="pnpm add -D"
 alias pnr="pnpm run"
-alias pnx="pnpm dlx"
 alias pnu="pnpm update --recursive --interactive --latest"
 
 # === Brew aliases ===
