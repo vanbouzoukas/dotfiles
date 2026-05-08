@@ -6,7 +6,7 @@ export BUN_INSTALL="${HOME}/.bun"
 
 # pnpm
 export PNPM_HOME="${HOME}/Library/pnpm"
-[[ -d "$PNPM_HOME" ]] && path=("$PNPM_HOME" $path)
+[[ -d "$PNPM_HOME/bin" ]] && path=("$PNPM_HOME/bin" $path)
 
 # Homebrew
 if [[ -f "/opt/homebrew/bin/brew" ]]; then
