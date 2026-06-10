@@ -4,6 +4,12 @@ set -euo pipefail
 REPO_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 STATE_DIR="${HOME}/.dotfiles"
 WORK_MODE_MARKER="${STATE_DIR}/work_mode"
+THIRD_PARTY_BREW_TAPS=(
+    "oven-sh/bun"
+)
+THIRD_PARTY_BREW_FORMULAE=(
+    "oven-sh/bun/bun"
+)
 
 echo "🔧 Installing dotfiles..."
 
@@ -25,6 +31,17 @@ fi
 if ! command -v stow &>/dev/null; then
     echo "📦 Installing stow..."
     brew install stow
+fi
+
+if brew help trust &>/dev/null; then
+    echo "🔐 Trusting third-party Homebrew formulae..."
+    for tap in "${THIRD_PARTY_BREW_TAPS[@]}"; do
+        brew tap "$tap"
+    done
+    for formula in "${THIRD_PARTY_BREW_FORMULAE[@]}"; do
+        brew trust --formula "$formula"
+    done
+    export HOMEBREW_REQUIRE_TAP_TRUST=1
 fi
 
 # === 3. Brewfile ===

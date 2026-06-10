@@ -21,6 +21,8 @@ typeset -U path PATH
 # === Environment Variables ===
 
 export HOMEBREW_NO_ANALYTICS=1
+# Opt into Homebrew's upcoming default; install.sh trusts required third-party formulae.
+export HOMEBREW_REQUIRE_TAP_TRUST=1
 export NEXT_TELEMETRY_DISABLED=1
 
 # === Bun aliases ===
