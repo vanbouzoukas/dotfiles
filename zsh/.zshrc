@@ -50,7 +50,7 @@ alias pnu="pnpm update --recursive --interactive --latest"
 # === Brew aliases ===
 
 alias br="brew"
-alias bru="brew upgrade --greedy && brew cleanup --prune=all"
+alias bru="brew upgrade --greedy --yes && brew cleanup --prune=all"
 alias brc="brew cleanup --prune=all"
 alias bri="brew info"
 
