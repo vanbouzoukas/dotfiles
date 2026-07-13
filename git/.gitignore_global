@@ -22,7 +22,6 @@ Desktop.ini
 
 # Editor
 .idea/
-.vscode/
 **/.claude/settings.local.json
 *.swp
 *.swo
