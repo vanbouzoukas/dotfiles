@@ -45,7 +45,7 @@ alias pnci="pnpm ci"
 alias pna="pnpm add"
 alias pnad="pnpm add -D"
 alias pnr="pnpm run"
-alias pnu="pnpm update --recursive --interactive --latest"
+alias pnu="pnpm update --recursive --interactive --latest  --include-github-actions"
 
 # === Brew aliases ===
 
