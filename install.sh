@@ -41,7 +41,6 @@ if brew help trust &>/dev/null; then
     for formula in "${THIRD_PARTY_BREW_FORMULAE[@]}"; do
         brew trust --formula "$formula"
     done
-    export HOMEBREW_REQUIRE_TAP_TRUST=1
 fi
 
 # === 3. Brewfile ===

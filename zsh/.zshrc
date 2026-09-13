@@ -21,8 +21,10 @@ typeset -U path PATH
 # === Environment Variables ===
 
 export HOMEBREW_NO_ANALYTICS=1
-# Opt into Homebrew's upcoming default; install.sh trusts required third-party formulae.
-export HOMEBREW_REQUIRE_TAP_TRUST=1
+# Suppress package details from automatic updates.
+export HOMEBREW_AUTO_UPDATE_QUIET=1
+# Do not upgrade casks that update themselves.
+export HOMEBREW_NO_UPGRADE_AUTO_UPDATES_CASKS=1
 export NEXT_TELEMETRY_DISABLED=1
 
 # === Bun aliases ===
@@ -53,6 +55,7 @@ alias br="brew"
 alias bru="brew upgrade --greedy --yes && brew cleanup --prune=all"
 alias brc="brew cleanup --prune=all"
 alias bri="brew info"
+alias brv="brew vulns --brewfile"
 
 # === General aliases ===
 
