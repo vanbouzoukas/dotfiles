@@ -16,6 +16,7 @@ unless File.exist?(File.expand_path("~/.dotfiles/work_mode"))
   cask "figma"
   cask "github"
   cask "google-chrome"
+  cask "homebrew-app"
   cask "openra"
   cask "plex"
   cask "visual-studio-code"

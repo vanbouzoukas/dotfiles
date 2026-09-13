@@ -12,9 +12,9 @@ make install
 
 For work machines (skips personal apps): `make install-work`
 
-Homebrew tap trust is enabled by default in the shell config. The installer also
-trusts the specific third-party formulae listed in `install.sh`, so `brew
-bundle` and upgrade commands keep working as Homebrew tightens tap trust.
+Homebrew requires explicitly trusted third-party formulae. The installer trusts
+the formulae listed in `install.sh`; automatic updates stay quiet, and casks
+that update themselves are skipped during upgrades.
 
 ## Post-install
 
