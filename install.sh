@@ -4,12 +4,6 @@ set -euo pipefail
 REPO_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 STATE_DIR="${HOME}/.dotfiles"
 WORK_MODE_MARKER="${STATE_DIR}/work_mode"
-THIRD_PARTY_BREW_TAPS=(
-    "oven-sh/bun"
-)
-THIRD_PARTY_BREW_FORMULAE=(
-    "oven-sh/bun/bun"
-)
 
 echo "🔧 Installing dotfiles..."
 
@@ -33,16 +27,6 @@ if ! command -v stow &>/dev/null; then
     brew install stow
 fi
 
-if brew help trust &>/dev/null; then
-    echo "🔐 Trusting third-party Homebrew formulae..."
-    for tap in "${THIRD_PARTY_BREW_TAPS[@]}"; do
-        brew tap "$tap"
-    done
-    for formula in "${THIRD_PARTY_BREW_FORMULAE[@]}"; do
-        brew trust --formula "$formula"
-    done
-fi
-
 # === 3. Brewfile ===
 
 echo "📦 Installing packages from Brewfile..."
@@ -61,15 +45,5 @@ brew bundle --file=Brewfile || echo "⚠️  Some packages may have failed."
 
 echo "🔗 Linking dotfiles..."
 stow -v --restow --target="$HOME" --dir="$REPO_DIR" zsh git starship
-
-# === 5. macOS defaults ===
-
-if [[ "$(uname)" == "Darwin" ]]; then
-    echo "🍎 Setting macOS defaults..."
-    if [ -f "$REPO_DIR/macos/set-defaults.sh" ]; then
-        chmod +x "$REPO_DIR/macos/set-defaults.sh"
-        "$REPO_DIR/macos/set-defaults.sh"
-    fi
-fi
 
 echo "✅ Done! Restart your terminal."
