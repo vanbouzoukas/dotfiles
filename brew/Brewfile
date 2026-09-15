@@ -16,5 +16,6 @@ unless File.exist?(File.expand_path("~/.dotfiles/work_mode"))
   cask "google-chrome"
   cask "openra"
   cask "plex"
+  cask "protonvpn"
   cask "visual-studio-code"
 end
