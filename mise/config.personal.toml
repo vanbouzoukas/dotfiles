@@ -1,8 +1,5 @@
 # Personal machines only.
 
-[tools]
-mas = { version = "latest", auto_update = true } # installs App Store apps
-
 [bootstrap.packages]
 "brew-cask:brave-browser" = "latest"
 "brew-cask:chatgpt" = "latest"
@@ -17,16 +14,3 @@ mas = { version = "latest", auto_update = true } # installs App Store apps
 "brew-cask:protonvpn" = "latest"
 "brew-cask:visual-studio-code" = "latest"
 "brew-cask:zoom" = "latest"
-"mas:1365531024" = "latest" # 1Blocker
-"mas:937984704" = "latest" # Amphetamine
-"mas:1472875808" = "latest" # CardPointers
-"mas:1526651672" = "latest" # Eagle for Safari
-"mas:1456188526" = "latest" # Mini Motorways
-"mas:361304891" = "latest" # Numbers
-"mas:490179405" = "latest" # Okta Verify
-"mas:361309726" = "latest" # Pages
-"mas:6743861719" = "latest" # Points Path
-"mas:1451893560" = "latest" # Rakuten Cash Back
-"mas:803453959" = "latest" # Slack
-"mas:310633997" = "latest" # WhatsApp
-"mas:497799835" = "latest" # Xcode
