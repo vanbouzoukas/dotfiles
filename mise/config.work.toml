@@ -1,0 +1,5 @@
+# Work machines only.
+
+[env]
+# Trust the Zscaler root certificate in Node.
+NODE_EXTRA_CA_CERTS = "$HOME/.config/certs/zscaler-root-ca.pem"

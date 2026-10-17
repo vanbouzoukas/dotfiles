@@ -1,10 +1,6 @@
-# Machine-specific settings (name, email) in ~/.gitconfig.local
-
-[include]
-    path = ~/.gitconfig.local
-
-[core]
-    excludesfile = ~/.gitignore_global
+[user]
+    name = Van Bouzoukas
+    email = 29815828+vanbouzoukas@users.noreply.github.com
 
 [init]
     defaultBranch = main
@@ -21,12 +17,6 @@
 
 [merge]
     conflictstyle = zdiff3
-
-[filter "lfs"]
-    clean = git-lfs clean -- %f
-    smudge = git-lfs smudge -- %f
-    process = git-lfs filter-process
-    required = true
 
 [alias]
     s = status -s

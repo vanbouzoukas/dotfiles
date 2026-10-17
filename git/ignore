@@ -1,6 +1,6 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# Ignored in every repo.
 
-# macOS
+# OS files
 .DS_Store
 .AppleDouble
 .LSOverride
@@ -10,7 +10,7 @@
 Thumbs.db
 Desktop.ini
 
-# Secrets & Local Config
+# Secrets and local config
 .env
 .env.*
 !.env.example
@@ -20,7 +20,7 @@ Desktop.ini
 .npmrc
 .pypirc
 
-# Editor
+# Editors and tools
 .idea/
 **/.claude/settings.local.json
 *.swp
@@ -29,7 +29,7 @@ Desktop.ini
 *.sublime-project
 *.sublime-workspace
 
-# Build & Logs
+# Build output and logs
 node_modules/
 dist/
 build/
@@ -52,7 +52,7 @@ __pycache__/
 .venv/
 venv/
 
-# SSH (NEVER commit these)
+# SSH keys
 id_rsa*
 id_ed25519*
 *.pub

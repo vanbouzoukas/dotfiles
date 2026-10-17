@@ -1,0 +1,27 @@
+# Personal machines only.
+
+[bootstrap.packages]
+"brew-cask:brave-browser" = "latest"
+"brew-cask:chatgpt" = "latest"
+"brew-cask:claude" = "latest"
+"brew-cask:figma" = "latest"
+"brew-cask:github" = "latest"
+"brew-cask:ogdesign-eagle" = "latest"
+"brew-cask:google-chrome" = "latest"
+"brew-cask:obsidian" = "latest"
+"brew-cask:openra" = "latest"
+"brew-cask:plex" = "latest"
+"brew-cask:protonvpn" = "latest"
+"brew-cask:visual-studio-code" = "latest"
+"brew-cask:zoom" = "latest"
+"mas:1365531024" = "latest" # 1Blocker
+"mas:937984704" = "latest" # Amphetamine
+"mas:1472875808" = "latest" # CardPointers
+"mas:1526651672" = "latest" # Eagle for Safari
+"mas:1456188526" = "latest" # Mini Motorways
+"mas:361304891" = "latest" # Numbers
+"mas:361309726" = "latest" # Pages
+"mas:6743861719" = "latest" # Points Path
+"mas:1451893560" = "latest" # Rakuten Cash Back
+"mas:803453959" = "latest" # Slack
+"mas:310633997" = "latest" # WhatsApp
