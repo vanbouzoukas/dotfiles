@@ -9,6 +9,9 @@ self_update.auto = true # update mise itself weekly
 [tools]
 bun = { version = "latest", auto_update = true }
 claude = { version = "latest", auto_update = true } # Claude Code (the claude command)
+# GitHub CLI, which Git uses to log in. No auto_update, because its check can
+# break that login; the daily update task keeps it current instead.
+gh = { version = "latest" }
 git-lfs = { version = "latest", auto_update = true } # large files in some repos
 mas = { version = "latest", auto_update = true } # installs App Store apps
 node = { version = "lts", auto_update = true }

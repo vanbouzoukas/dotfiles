@@ -20,9 +20,9 @@ run this, with `P` set to `personal` or `work`:
 P=personal && git clone https://github.com/vanbouzoukas/dotfiles.git ~/Developer/dotfiles && curl -fsSL https://mise.run | sh && mkdir -p ~/.config && ln -s ~/Developer/dotfiles/mise ~/.config/mise && echo "env = [\"$P\"]" > ~/.config/mise/miserc.local.toml && ~/.local/bin/mise bootstrap
 ```
 
-When it finishes, open a new terminal and run `mise bootstrap` again to
-install the App Store apps, then log out and back in. If a dotfile already exists, replace it with
-`mise dot apply --force`.
+When it finishes, open a new terminal, run `mise bootstrap` again to install
+the App Store apps, and log in to GitHub with `gh auth login`. Then log out and
+back in. If a dotfile already exists, replace it with `mise dot apply --force`.
 
 ## Structure
 
