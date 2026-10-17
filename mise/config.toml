@@ -13,6 +13,7 @@ pnpm = { version = "latest", auto_update = true }
 starship = { version = "latest", auto_update = true }
 claude = { version = "latest", auto_update = true } # Claude Code (the claude command)
 mas = { version = "latest", auto_update = true } # installs App Store apps
+git-lfs = { version = "latest", auto_update = true } # large files in some repos
 
 # === Apps ===
 
