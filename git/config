@@ -19,6 +19,9 @@
     helper =
     helper = !"$HOME/.local/share/mise/shims/gh" auth git-credential
 
+[fetch]
+    prune = true
+
 [filter "lfs"]
     clean = git-lfs clean -- %f
     process = git-lfs filter-process
