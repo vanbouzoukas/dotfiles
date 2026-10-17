@@ -7,19 +7,16 @@
 [directory]
 read_only = " 🔒"
 
-[package]
-symbol = "📦 "
-
 [git_branch]
 symbol = "🌱 "
 
 [git_status]
 deleted = "🗑 "
 
-# === Languages & tools ===
+[package]
+symbol = "📦 "
 
-[nodejs]
-symbol = "[⬢](bold green) "
+# === Languages & tools ===
 
 [bun]
 symbol = "🍔 "
@@ -29,6 +26,9 @@ symbol = "🦕 "
 
 [docker_context]
 symbol = "🐳 "
+
+[nodejs]
+symbol = "[⬢](bold green) "
 
 [python]
 symbol = "🐍 "
