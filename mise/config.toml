@@ -13,7 +13,6 @@ claude = { version = "latest", auto_update = true } # Claude Code (the claude co
 # break that login; the daily update task keeps it current instead.
 gh = { version = "latest" }
 git-lfs = { version = "latest", auto_update = true } # large files in some repos
-mas = { version = "latest", auto_update = true } # installs App Store apps
 node = { version = "lts", auto_update = true }
 pnpm = { version = "latest", auto_update = true }
 starship = { version = "latest", auto_update = true }

@@ -1,5 +1,8 @@
 # Personal machines only.
 
+[tools]
+mas = { version = "latest", auto_update = true } # installs App Store apps
+
 [bootstrap.packages]
 "brew-cask:brave-browser" = "latest"
 "brew-cask:chatgpt" = "latest"
