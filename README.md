@@ -38,5 +38,5 @@ starship/starship.toml     → ~/.config/starship.toml
 
 ## Updates
 
-Tools and apps update daily at 7:00. Run `mu` to update now, and `ms` to see
-the state of everything.
+Tools and apps update daily at 7:00, or when the Mac next wakes if it was
+asleep. Run `mu` to update now, and `ms` to see the state of everything.
