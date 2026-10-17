@@ -7,13 +7,13 @@ self_update.auto = true # update mise itself weekly
 
 # auto_update: update in the background, checked daily.
 [tools]
-node = { version = "lts", auto_update = true }
 bun = { version = "latest", auto_update = true }
+claude = { version = "latest", auto_update = true } # Claude Code (the claude command)
+git-lfs = { version = "latest", auto_update = true } # large files in some repos
+mas = { version = "latest", auto_update = true } # installs App Store apps
+node = { version = "lts", auto_update = true }
 pnpm = { version = "latest", auto_update = true }
 starship = { version = "latest", auto_update = true }
-claude = { version = "latest", auto_update = true } # Claude Code (the claude command)
-mas = { version = "latest", auto_update = true } # installs App Store apps
-git-lfs = { version = "latest", auto_update = true } # large files in some repos
 
 # === Apps ===
 
@@ -26,10 +26,10 @@ git-lfs = { version = "latest", auto_update = true } # large files in some repos
 
 # Sources are relative to this file.
 [dotfiles]
-"~/.zshrc" = { source = "../zsh/.zshrc" }
 "~/.config/git/config" = { source = "../git/config" }
 "~/.config/git/ignore" = { source = "../git/ignore" }
 "~/.config/starship.toml" = { source = "../starship/starship.toml" }
+"~/.zshrc" = { source = "../zsh/.zshrc" }
 
 # === macOS settings ===
 
@@ -38,22 +38,22 @@ autohide = true
 
 # Dock settings mise has no named option for, or that the Dock stores as decimals.
 [bootstrap.macos.defaults."com.apple.dock"]
-tilesize = 48.0
 "autohide-delay" = 0.0 # show the hidden Dock without a delay
 "autohide-time-modifier" = 0.0 # and without the slide animation
+tilesize = 48.0
 
 [bootstrap.macos.finder]
-show_pathbar = true
 show_all_files = true
+show_pathbar = true
+
+# Applies after logging out and back in.
+[bootstrap.macos.keyboard]
+initial_key_repeat = 15
+key_repeat = 2
 
 [bootstrap.macos.trackpad]
 tap_to_click = true
 three_finger_drag = true
-
-# Applies after logging out and back in.
-[bootstrap.macos.keyboard]
-key_repeat = 2
-initial_key_repeat = 15
 
 # === Updates ===
 
