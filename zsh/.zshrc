@@ -1,76 +1,38 @@
-# === PATH setup ===
+# === PATH ===
 
-# Bun
-export BUN_INSTALL="${HOME}/.bun"
-[[ -d "$BUN_INSTALL/bin" ]] && path=("$BUN_INSTALL/bin" $path)
+# Commands from global bun and pnpm packages
+export PNPM_HOME="$HOME/Library/pnpm"
+path=("$HOME/.bun/bin" "$PNPM_HOME/bin" $path)
 
-# pnpm
-export PNPM_HOME="${HOME}/Library/pnpm"
-[[ -d "$PNPM_HOME/bin" ]] && path=("$PNPM_HOME/bin" $path)
+# Commands from apps, such as VS Code's `code`
+path=("/opt/homebrew/bin" $path)
 
-# Homebrew
-if [[ -f "/opt/homebrew/bin/brew" ]]; then
-    eval "$(/opt/homebrew/bin/brew shellenv)"
-elif [[ -f "/usr/local/bin/brew" ]]; then
-    eval "$(/usr/local/bin/brew shellenv)"
-fi
+# mise
+path=("$HOME/.local/bin" $path)
+eval "$(mise activate zsh)"
 
-# Dedupe PATH entries
-typeset -U path PATH
+typeset -U path PATH # remove duplicates
 
-# === Environment Variables ===
+# === Environment ===
 
-export HOMEBREW_NO_ANALYTICS=1
-# Suppress package details from automatic updates.
-export HOMEBREW_AUTO_UPDATE_QUIET=1
-# Do not upgrade casks that update themselves.
-export HOMEBREW_NO_UPGRADE_AUTO_UPDATES_CASKS=1
 export NEXT_TELEMETRY_DISABLED=1
 
-# === Bun aliases ===
+# === Aliases ===
 
 alias bn="bun"
 alias bni="bun install"
-alias bnc="rm -rf node_modules"
-alias bnci="bun ci"
-alias bna="bun add"
-alias bnad="bun add -d"
-alias bnr="bun run"
-alias bnx="bunx"
 alias bnu="bun update --recursive --interactive --latest"
-
-# === pnpm aliases ===
 
 alias pni="pnpm install"
 alias pnc="pnpm clean"
-alias pnci="pnpm ci"
-alias pna="pnpm add"
-alias pnad="pnpm add -D"
-alias pnr="pnpm run"
-alias pnu="pnpm update --recursive --interactive --latest  --include-github-actions"
+alias pnu="pnpm update --recursive --interactive --latest --include-github-actions"
 
-# === Brew aliases ===
-
-alias br="brew"
-alias bru="brew upgrade --greedy --yes && brew cleanup --prune=all"
-alias brc="brew cleanup --prune=all"
-alias bri="brew info"
-alias brv="brew vulns --brewfile"
-
-# === General aliases ===
+alias mu="mise run update"
+alias ms="mise bootstrap status"
 
 alias c="clear"
-alias reload="exec zsh"
 alias dev="cd ~/Developer"
-alias o="open ."
-alias ..="cd .."
-alias ...="cd ../.."
-alias ll="ls -alh"
-alias la="ls -A"
 
 # === Prompt ===
 
 eval "$(starship init zsh)"
-
-# Load machine-local overrides (not tracked in git).
-[[ -f "$HOME/.zshrc.local" ]] && source "$HOME/.zshrc.local"

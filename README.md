@@ -1,51 +1,42 @@
 # dotfiles
 
-Personal macOS setup. Managed with [GNU Stow](https://www.gnu.org/software/stow/).
+My macOS setup, managed with [mise](https://mise.jdx.dev): dev tools, apps,
+dotfiles and macOS settings.
 
-## Setup
+## Using this yourself
 
-```sh
-git clone https://github.com/vanbouzoukas/dotfiles.git ~/Developer/dotfiles
-cd ~/Developer/dotfiles
-make install
-```
+It's tailored to my machines, so fork it and change:
 
-For work machines (skips personal apps): `make install-work`
+1. `vanbouzoukas` in the command below to your GitHub username.
+2. `name` and `email` in `git/config`.
+3. The tools, apps and settings in `mise/` to your taste.
 
-Automatic Homebrew updates stay quiet, and casks that update themselves are
-skipped during upgrades.
+## New machine
 
-## Post-install
-
-Create your Git identity:
+Sign in to the App Store and install Git with `xcode-select --install`. Then
+run this, with `P` set to `personal` or `work`:
 
 ```sh
-cp ~/Developer/dotfiles/git/.gitconfig.local.template ~/.gitconfig.local
-# Edit with your name and email
+P=personal && git clone https://github.com/vanbouzoukas/dotfiles.git ~/Developer/dotfiles && curl -fsSL https://mise.run | sh && mkdir -p ~/.config && ln -s ~/Developer/dotfiles/mise ~/.config/mise && echo "env = [\"$P\"]" > ~/.config/mise/miserc.local.toml && ~/.local/bin/mise bootstrap
 ```
 
-Then restart your terminal.
+When it finishes, open a new terminal and run `mise bootstrap` again to
+install the App Store apps, then log out and back in. If a dotfile already exists, replace it with
+`mise dot apply --force`.
 
 ## Structure
 
 ```
-brew/       Brewfile
-git/        .gitconfig, .gitignore_global, gitconfig.local.template
-starship/   Shell prompt
-zsh/        .zshrc
+mise/config.toml           Every machine
+mise/config.personal.toml  Personal machines
+mise/config.work.toml      Work machines
+mise/miserc.local.toml     This machine's profile (not in the repo)
+zsh/.zshrc                 → ~/.zshrc
+git/config, git/ignore     → ~/.config/git/
+starship/starship.toml     → ~/.config/starship.toml
 ```
 
-## Commands
+## Updates
 
-| Command             | Description          |
-| ------------------- | -------------------- |
-| `make install`      | Full install         |
-| `make install-work` | Skip personal apps   |
-
-## Maintaining Homebrew trust
-
-`brew/Brewfile` currently uses only official Homebrew formulae and casks, so
-no trust step is needed. If you add one from a non-Homebrew tap, trust it
-explicitly with `brew trust --formula <tap>/<formula>` (prefer the specific
-formula over the entire tap) — see [Homebrew's Tap Trust
-docs](https://docs.brew.sh/Tap-Trust).
+Tools and apps update daily at 7:00. Run `mu` to update now, and `ms` to see
+the state of everything.
