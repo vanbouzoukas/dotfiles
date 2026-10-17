@@ -22,8 +22,6 @@ starship = { version = "latest", auto_update = true }
 
 [bootstrap.packages]
 "brew-cask:brainfm" = "latest"
-"mas:490179405" = "latest" # Okta Verify
-"mas:497799835" = "latest" # Xcode
 
 # === Dotfiles ===
 
