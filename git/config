@@ -11,10 +11,6 @@
     undo = reset --soft HEAD~1
 
 # Log in to GitHub with the GitHub CLI (run `gh auth login` once per machine).
-[credential "https://gist.github.com"]
-    helper =
-    helper = !"$HOME/.local/share/mise/shims/gh" auth git-credential
-
 [credential "https://github.com"]
     helper =
     helper = !"$HOME/.local/share/mise/shims/gh" auth git-credential
