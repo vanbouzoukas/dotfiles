@@ -33,12 +33,9 @@ starship = { version = "latest", auto_update = true }
 
 # === macOS settings ===
 
-[bootstrap.macos.dock]
-autohide = true
-
 # Dock settings mise has no named option for, or that the Dock stores as decimals.
 [bootstrap.macos.defaults."com.apple.dock"]
-"autohide-delay" = 0.0 # show the hidden Dock without a delay
+"autohide-delay" = 0.0 # if the Dock hides, show it without a delay
 "autohide-time-modifier" = 0.0 # and without the slide animation
 tilesize = 48.0
 
