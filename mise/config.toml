@@ -42,6 +42,7 @@ tilesize = 48.0
 [bootstrap.macos.finder]
 show_all_files = true
 show_pathbar = true
+sort_folders_first = true # keep folders on top in windows sorted by name
 
 # Applies after logging out and back in.
 [bootstrap.macos.keyboard]
