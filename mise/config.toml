@@ -1,6 +1,7 @@
 # Every machine. Profiles (config.personal.toml, config.work.toml) add to this.
 
 [settings]
+cache_prune_age = "1d" # delete old app downloads
 self_update.auto = true # update mise itself weekly
 
 # === Tools ===
