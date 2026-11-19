@@ -31,6 +31,7 @@ mise/config.toml           Every machine
 mise/config.personal.toml  Personal machines
 mise/config.work.toml      Work machines
 mise/miserc.local.toml     This machine's profile (not in the repo)
+claude/settings.json       → ~/.claude/settings.json
 zsh/.zshrc                 → ~/.zshrc
 git/config, git/ignore     → ~/.config/git/
 starship/starship.toml     → ~/.config/starship.toml
