@@ -3,47 +3,40 @@
 My macOS setup, managed with [mise](https://mise.jdx.dev): dev tools, apps,
 dotfiles and macOS settings.
 
-## Using this yourself
-
-It's tailored to my machines, so fork it and change:
-
-1. `vanbouzoukas` in the command below to your GitHub username.
-2. `name` and `email` in `git/config`, and the email in the `ssh-keygen`
-   command under Signing commits.
-3. The tools, apps and settings in `mise/` to your taste.
-
 ## New machine
 
-Install Git with `xcode-select --install`, then run this with `P` set to
-`personal` or `work`:
+1. Install Git with `xcode-select --install`.
+2. Run this, with `P` set to `personal` or `work`:
 
-```sh
-P=personal && git clone https://github.com/vanbouzoukas/dotfiles.git ~/Developer/dotfiles && curl -fsSL https://mise.run | sh && mkdir -p ~/.config && ln -sfn ~/Developer/dotfiles/mise ~/.config/mise && echo "env = [\"$P\"]" > ~/.config/mise/miserc.local.toml && ~/.local/bin/mise bootstrap
-```
-
-When it finishes, open a new terminal, log in to GitHub with `gh auth login`,
-and log out and back in. If a dotfile already exists, replace it with
-`mise dot apply --force`.
-
-## Signing commits
-
-Commits are signed so GitHub shows them as Verified. Until you do this on a new
-Mac, `git commit` fails. Each Mac has its own key:
-
-1. `ssh-keygen -t ed25519 -C "29815828+vanbouzoukas@users.noreply.github.com"`,
-   with a passphrase.
-2. Add this to `~/.ssh/config`, then run
-   `ssh-add --apple-use-keychain ~/.ssh/id_ed25519` to store the passphrase in
-   the Keychain:
-
-   ```
-   Host *
-       AddKeysToAgent yes
-       UseKeychain yes
+   ```sh
+   P=personal && git clone https://github.com/vanbouzoukas/dotfiles.git ~/Developer/dotfiles && curl -fsSL https://mise.run | sh && mkdir -p ~/.config && ln -sfn ~/Developer/dotfiles/mise ~/.config/mise && echo "env = [\"$P\"]" > ~/.config/mise/miserc.local.toml && ~/.local/bin/mise bootstrap
    ```
 
-3. `gh auth refresh -h github.com -s admin:ssh_signing_key`, then
-   `gh ssh-key add ~/.ssh/id_ed25519.pub --type signing`.
+   If a dotfile already exists, replace it with `mise dot apply --force`.
+
+3. Open a new terminal and log in to GitHub:
+
+   ```sh
+   gh auth login -s admin:ssh_signing_key
+   ```
+
+4. Set up commit signing, so GitHub shows commits as Verified. Each Mac has its
+   own key, and `git commit` fails until this is done. Choose a passphrase when
+   asked; the Keychain remembers it.
+
+   ```sh
+   ssh-keygen -t ed25519 -C "29815828+vanbouzoukas@users.noreply.github.com"
+   printf 'Host *\n    AddKeysToAgent yes\n    UseKeychain yes\n' >> ~/.ssh/config
+   ssh-add --apple-use-keychain ~/.ssh/id_ed25519
+   gh ssh-key add ~/.ssh/id_ed25519.pub --type signing
+   ```
+
+5. Log out and back in, so the keyboard settings apply.
+
+## Updates
+
+Tools and apps update daily at 7:00, or when the Mac next wakes if it was
+asleep. Run `mu` to update now, and `ms` to see the state of everything.
 
 ## Structure
 
@@ -58,7 +51,11 @@ git/config, git/ignore     → ~/.config/git/
 starship/starship.toml     → ~/.config/starship.toml
 ```
 
-## Updates
+## Using this yourself
 
-Tools and apps update daily at 7:00, or when the Mac next wakes if it was
-asleep. Run `mu` to update now, and `ms` to see the state of everything.
+It's tailored to my machines, so fork it and change:
+
+1. `vanbouzoukas` in the clone command to your GitHub username.
+2. `name` and `email` in `git/config`, and the email in the `ssh-keygen`
+   command.
+3. The tools, apps and settings in `mise/` to your taste.
