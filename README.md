@@ -8,7 +8,8 @@ dotfiles and macOS settings.
 It's tailored to my machines, so fork it and change:
 
 1. `vanbouzoukas` in the command below to your GitHub username.
-2. `name` and `email` in `git/config`.
+2. `name` and `email` in `git/config`, and the email in the `ssh-keygen`
+   command under Signing commits.
 3. The tools, apps and settings in `mise/` to your taste.
 
 ## New machine
@@ -23,6 +24,26 @@ P=personal && git clone https://github.com/vanbouzoukas/dotfiles.git ~/Developer
 When it finishes, open a new terminal, log in to GitHub with `gh auth login`,
 and log out and back in. If a dotfile already exists, replace it with
 `mise dot apply --force`.
+
+## Signing commits
+
+Commits are signed so GitHub shows them as Verified. Until you do this on a new
+Mac, `git commit` fails. Each Mac has its own key:
+
+1. `ssh-keygen -t ed25519 -C "29815828+vanbouzoukas@users.noreply.github.com"`,
+   with a passphrase.
+2. Add this to `~/.ssh/config`, then run
+   `ssh-add --apple-use-keychain ~/.ssh/id_ed25519` to store the passphrase in
+   the Keychain:
+
+   ```
+   Host *
+       AddKeysToAgent yes
+       UseKeychain yes
+   ```
+
+3. `gh auth refresh -h github.com -s admin:ssh_signing_key`, then
+   `gh ssh-key add ~/.ssh/id_ed25519.pub --type signing`.
 
 ## Structure
 

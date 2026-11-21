@@ -1,6 +1,7 @@
 [user]
     name = Van Bouzoukas
     email = 29815828+vanbouzoukas@users.noreply.github.com
+    signingkey = ~/.ssh/id_ed25519.pub
 
 [alias]
     amend = commit --amend --no-edit
@@ -11,6 +12,9 @@
     undo = reset --soft HEAD~1
 
 # Log in to GitHub with the GitHub CLI (run `gh auth login` once per machine).
+[commit]
+    gpgsign = true # Verified badge on GitHub; commits fail until the key exists (see README)
+
 [credential "https://github.com"]
     helper =
     helper = !"$HOME/.local/share/mise/shims/gh" auth git-credential
@@ -23,6 +27,9 @@
     process = git-lfs filter-process
     required = true
     smudge = git-lfs smudge -- %f
+
+[gpg]
+    format = ssh
 
 [init]
     defaultBranch = main
