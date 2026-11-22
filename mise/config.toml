@@ -27,6 +27,7 @@ starship = { version = "latest", auto_update = true }
 
 # Sources are relative to this file.
 [dotfiles]
+"~/.claude/CLAUDE.md" = { source = "../claude/CLAUDE.md" }
 "~/.claude/settings.json" = { source = "../claude/settings.json" }
 "~/.config/git/config" = { source = "../git/config" }
 "~/.config/git/ignore" = { source = "../git/ignore" }
