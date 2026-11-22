@@ -26,7 +26,6 @@ dotfiles and macOS settings.
 
    ```sh
    ssh-keygen -t ed25519 -C "29815828+vanbouzoukas@users.noreply.github.com"
-   printf 'Host *\n    AddKeysToAgent yes\n    UseKeychain yes\n' >> ~/.ssh/config
    ssh-add --apple-use-keychain ~/.ssh/id_ed25519
    gh ssh-key add ~/.ssh/id_ed25519.pub --type signing
    ```
@@ -49,6 +48,7 @@ claude/CLAUDE.md           → ~/.claude/CLAUDE.md
 claude/settings.json       → ~/.claude/settings.json
 zsh/.zshrc                 → ~/.zshrc
 git/config, git/ignore     → ~/.config/git/
+ssh/config                 → ~/.ssh/config
 starship/starship.toml     → ~/.config/starship.toml
 ```
 

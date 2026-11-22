@@ -32,6 +32,7 @@ starship = { version = "latest", auto_update = true }
 "~/.config/git/config" = { source = "../git/config" }
 "~/.config/git/ignore" = { source = "../git/ignore" }
 "~/.config/starship.toml" = { source = "../starship/starship.toml" }
+"~/.ssh/config" = { source = "../ssh/config" }
 "~/.zshrc" = { source = "../zsh/.zshrc" }
 
 # === macOS settings ===
