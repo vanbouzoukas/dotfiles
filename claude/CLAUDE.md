@@ -8,6 +8,10 @@
   dependencies minimal.
 - Stay close to standards and conventions, not custom setups.
 
+## Code
+
+- Comments are short and say why, not what.
+
 ## Commits
 
 - Only commit when asked.
