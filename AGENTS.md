@@ -45,6 +45,7 @@ macOS setup managed with mise. See README.md for the layout and bootstrap comman
 ## Commits
 
 - Only commit when asked.
-- Angular convention, no scope: `feat:`, `fix:` or `refactor:`, then a subject
-  in the imperative whose first word is lowercase. Names keep their capitals,
+- [Conventional Commits](https://www.conventionalcommits.org), no scope:
+  `feat:`, `fix:` or `refactor:`, then a subject in the imperative whose first
+  word is lowercase. Names keep their capitals,
   as in `feat: install Perplexity on personal Macs`.
