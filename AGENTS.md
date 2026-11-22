@@ -4,10 +4,10 @@ macOS setup managed with mise. See README.md for the layout and bootstrap comman
 
 ## Principles
 
-- Less is more. Keep the defaults of macOS, apps and tools unless there's a
-  clear reason to change one.
-- Stay close to standards and conventions, not custom setups.
+- Use the defaults of macOS, apps and tools. Change config only when the
+  default can't do what's needed.
 - Use only what mise offers out of the box. No custom scripts or workarounds.
+- Stay close to standards and conventions, not custom setups.
 
 ## Where things go
 
